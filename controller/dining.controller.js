@@ -7,4 +7,8 @@ exports.getRestaurants = (req, res, next) => {
     });
   });
 };
+exports.RestaurantsAPI = async (req, res) => {
+  const data = await diningModel.getAllRestaurants();
+  res.send(data);
+}
 

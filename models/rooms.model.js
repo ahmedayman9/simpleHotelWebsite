@@ -25,4 +25,16 @@ exports.getAllRooms = () => {
       });
   });
 };
-
+exports.saveRoom = async (roomName, roomId, extras, image, roomCap, view) => {
+  let data = {
+    roomName: roomName,
+    roomId: roomId,
+    extras: extras,
+    image: image,
+    roomCap: roomCap,
+    view: view,
+  };
+  await mongoose.connect(DB_URL);
+  await Room.create(data);
+  await mongoose.disconnect();
+};
