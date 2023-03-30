@@ -1,0 +1,4 @@
+body{
+	background: #333 url(../media/underwater1.gif) no-repeat center center;
+	background-size:cover;
+}

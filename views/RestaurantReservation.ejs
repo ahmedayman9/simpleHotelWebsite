@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Restaurant Reservations</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />	
+		<link rel="stylesheet" type="text/css" href="css/aboutstyle.css" />	
+		
+
+	</head>
+	<body>
+		<div class="container">
+			<%- include("navbar") %>
+
+
+			<form method="get">
+					<header class="header">
+					<h2>Make a Table Reservation</h2>
+					</header>
+					<fieldset>
+						<legend>Table Reservation</legend>
+						<label>Restaurant
+				<select name="restaurant">
+				<option>Deck</option>
+				<option>Indoor</option>
+				<option>Fine Dining</option>
+				<option>Poolside</option>
+				<option>Nature View</option>
+				<option>City View</option>
+				</select>
+				</label>
+				<label>Number of party
+				<select name="noofparty">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				</select>
+				</label>
+				<label>Date
+				<input type="date">
+				</label>
+				<label>Time</label>
+				<input type="time"></label>
+				<label>Menu</label>
+				<select>
+				<option>Vegetarian</option>
+				<option>Vegan</option>
+				<option>Gluten Free</option>
+				</select>
+				<br>
+				<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input class="search" type="submit" value="Check Availability" onclick="myFunction()">
+				<br>
+				
+				<fieldset>
+				<legend>Personal Information</legend>
+				<table>
+				<tr>
+				<td><label>First Name*</label></td>
+				<td><input type="text" name="name"></td>
+				<td><label>Last Name*</label></td>
+				<td><input type="text" name="lastname"></td>
+				<td><label>E-mail Address*</label></td>
+				<td><input type="text" name="email"></td>
+				</tr>
+				
+				<tr>
+				<td><label>Country*</label></td>
+				<td><input type="text" name="country"></td>
+				<td><label>Address</label></td>
+				<td><input type="text" name="address"></td>
+				<td><label>City</label></td>
+				<td><input type="text" name="city"></td>
+				</tr>
+				<tr><td><label>Postal Code</label></td>
+				<td><input type="text" name="postalcode"</td>
+				<td><label>Phone</label></td>
+				<td><input type="text" name="phone"</td>
+				<td><label>Fax</label></td>
+				<td><input type="text" name="fax"</td>
+				</tr>
+				</table>
+				</fieldset>
+				<br>
+				<fieldset>
+					<legend>Special Requests</legend>
+				<textarea name="specialrequests" rows="5" cols="102">
+				</textarea>
+				</fieldset>
+				<br>
+			
+				
+				</form>
+				<form action="Success" method="post">
+					<br>&nbsp; &nbsp;	&nbsp; &nbsp; &nbsp;	&nbsp;&nbsp;&nbsp; &nbsp;	&nbsp; &nbsp;	&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="submit" 
+				name="Submit" id="frm1_submit" />
+				</form>
+				
+				
+				
+
+<script>
+function myFunction() {
+    alert("Place is available! You can proceed with the reservation");
+}
+</script>
+				
+				
+				
+			   
+
+
+</div>
+</body>
+</html>
