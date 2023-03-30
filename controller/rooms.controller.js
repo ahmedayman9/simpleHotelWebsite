@@ -15,3 +15,8 @@ exports.addRoom = (req, res, next) => {
   );
   res.send("Added");
 };
+exports.roomsAPI = (req, res, next) => {
+  roomsModel.getAllRooms().then((rooms) => {
+    res.send(rooms);
+  });
+}
