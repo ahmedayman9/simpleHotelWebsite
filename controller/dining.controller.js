@@ -11,4 +11,12 @@ exports.RestaurantsAPI = async (req, res) => {
   const data = await diningModel.getAllRestaurants();
   res.send(data);
 }
+exports.addRestaurants = (req, res) => {
+  diningModel.saveRestaurant(
+    req.params.restName,
+    req.params.restId,
+    req.params.image
+  );
+  res.send("Added");
+};
 
