@@ -38,3 +38,10 @@ exports.saveRoom = async (roomName, roomId, extras, image, roomCap, view) => {
   await Room.create(data);
   await mongoose.disconnect();
 };
+
+exports.getRoomWithId = async (roomId) => {
+  await mongoose.connect(DB_URL);
+  let x = await Room.findOne({roomId:+roomId});
+  mongoose.disconnect();
+  return x
+};

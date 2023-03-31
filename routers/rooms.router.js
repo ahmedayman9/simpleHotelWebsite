@@ -10,4 +10,6 @@ router.post(
   RoomsController.addRoom
 );
 
+router.get("/:roomId",RoomsController.getRoomWithId)
+
 module.exports = router;

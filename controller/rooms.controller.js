@@ -20,3 +20,6 @@ exports.roomsAPI = (req, res, next) => {
     res.send(rooms);
   });
 }
+exports.getRoomWithId=async (req,res)=>{
+  res.send(await roomsModel.getRoomWithId(req.params.roomId))
+}
