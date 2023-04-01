@@ -17,14 +17,14 @@
 
 
 
-			<form method="get">
+			<form method="get" action="/Bookings/Check">
 					<header>
 					<h2>Make a Room Reservation</h2>
 					</header>
 					<fieldset>
 						<legend>Room Reservation</legend>
 						<label>Room Type
-				<select name="roomtype">
+				<select name="roomType">
 				<option>Single</option>
 				<option>Double</option>
 				<option>Underwater Single</option>
@@ -36,20 +36,20 @@
 				</select>
 				</label>
 				<label>Number of adults
-				<select name="noofadults">
+				<select name="noOfAdults">
 				<option>1</option>
 				<option>2</option>
 				</select>
 				</label>
 				<label>Check in
-				<input type="date">
+				<input type="date" name="checkIn">
 				</label>
 				<label>Check out
-				<input type="date">
+				<input type="date" name="checkOut">
 				</label>
 				<br>
 				<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input class="search" type="submit" value="Check Availability" onclick="myFunction()">
+				<input class="search" type="submit" value="Check Availability">
 				<br>
 				
 				<fieldset>
@@ -57,9 +57,9 @@
 				<table>
 				<tr>
 				<td><label>First Name*</label></td>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="firstName"></td>
 				<td><label>Last Name*</label></td>
-				<td><input type="text" name="lastname"></td>
+				<td><input type="text" name="lastName"></td>
 				<td><label>E-mail Address*</label></td>
 				<td><input type="text" name="email"></td>
 				</tr>
@@ -73,7 +73,7 @@
 				<td><input type="text" name="city"></td>
 				</tr>
 				<tr><td><label>Postal Code</label></td>
-				<td><input type="text" name="postalcode"</td>
+				<td><input type="text" name="postalCode"</td>
 				<td><label>Phone</label></td>
 				<td><input type="text" name="phone"</td>
 				<td><label>Fax</label></td>
@@ -84,7 +84,7 @@
 				<br>
 				<fieldset>
 					<legend>Special Requests</legend>
-				<textarea name="specialrequests" rows="5" cols="105">
+				<textarea name="specialRequests" rows="5" cols="105">
 				</textarea>
 				</fieldset>
 				<br>
@@ -93,7 +93,7 @@
 					<legend>Payment Information</legend>
 				&nbsp; &nbsp;	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>Card Type*</label>
-					<select name="cardtype">
+					<select name="cardType">
 					<option>Visa</option>
 					<option>Master Card</option>
 					<option>American Express</option>
@@ -101,9 +101,9 @@
 					</select>
 					<br><br>
 					<label>Cardholder Name*</label>
-					<input type="text" name="name">
+					<input type="text" name="cardholderName">
 					<label>Card Number*</label>
-					<input type="text" name="cardnumber">
+					<input type="text" name="cardNumber">
 					<label>Expiration Date*</label>
 					<input type="month" name="month">	
 				</fieldset>
