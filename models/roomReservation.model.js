@@ -25,11 +25,10 @@ const roomReservationModel = mongoose.model("roomReservation",roomReservationSch
 
 exports.findRoomReservation = async (req)=>{
     await mongoose.connect(DB_URL)
-    let data = await roomReservationModel.findOne({roomType:req.roomType,checkIn:req.checkIn,checkOut:req.checkOut,firstName:req.firstName,lastName:req.lastName})
+    let data = await roomReservationModel.findOne({roomType:req.roomType,checkIn:req.checkIn,checkOut:req.checkOut})
     if (!data){
         return false
     }else{
-        console.log(data)
         return true
     }
 }
