@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const DB_URL = "mongodb://127.0.0.1:27017/Booking";
 
 const roomSchema = mongoose.Schema({
   roomId: Number,
@@ -13,15 +12,11 @@ const roomSchema = mongoose.Schema({
 const Room = mongoose.model("room", roomSchema);
 
 exports.getAllRooms = async () => {
-  await mongoose.connect(DB_URL)
-  let x = await Room.find({})
-  await mongoose.disconnect();
-  console.log('Disconnected')
-  return x
-
+  let x = await Room.find({});
+  return x;
 };
 exports.saveRoom = async (roomName, extras, image, roomCap, view) => {
-  let id = Object.keys(await Room.find({})).length ++
+  let id = Object.keys(await Room.find({})).length++;
   let data = {
     roomName: roomName,
     roomId: +id,
@@ -30,16 +25,10 @@ exports.saveRoom = async (roomName, extras, image, roomCap, view) => {
     roomCap: roomCap,
     view: view,
   };
-  await mongoose.connect(DB_URL);
   await Room.create(data);
-  await mongoose.disconnect();
-  console.log('Disconnected')
 };
 
 exports.getRoomWithId = async (roomId) => {
-  await mongoose.connect(DB_URL);
-  let x = await Room.findOne({roomId:+roomId});
-  await mongoose.disconnect();
-  console.log('Disconnected')
-  return x
+  let x = await Room.findOne({ roomId: +roomId });
+  return x;
 };
