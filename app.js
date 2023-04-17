@@ -7,6 +7,7 @@ const bookingRouter = require("./routers/bookings.router");
 const reservationRouter = require("./routers/reservation.router");
 const successRouter = require("./routers/Success.router");
 const errorRouter = require("./routers/error.router")
+const checkoutRouter = require("./routers/checkout.router")
 
 const app = express();
 app.set("view engine", "ejs");
@@ -18,7 +19,9 @@ app.use("/Dining", diningRouter);
 app.use("/Bookings", bookingRouter);
 app.use("/RestaurantReservation", reservationRouter);
 app.use("/Success", successRouter);
+app.use("/checkout",checkoutRouter)
 app.get("/", homeRouter);
+
 // app.use("",err)
 
 

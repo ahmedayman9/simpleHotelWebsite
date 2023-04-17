@@ -18,9 +18,10 @@ exports.getAllRestaurants =async () => {
 };
 
 exports.saveRestaurant = async (restName, restId, image) => {
+  let id = Object.keys(await Restaurant.find({})).length ++
   let data = {
     restName: restName,
-    restId: +restId,
+    restId: +id,
     image: image,
   };
   await mongoose.connect(DB_URL);

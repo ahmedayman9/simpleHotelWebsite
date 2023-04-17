@@ -7,7 +7,6 @@ exports.getRooms = async (req, res, next) => {
 exports.addRoom = (req, res, next) => {
   roomsModel.saveRoom(
     req.params.roomName,
-    req.params.roomId,
     req.params.extras,
     req.params.image,
     req.params.roomCap,

@@ -20,10 +20,11 @@ exports.getAllRooms = async () => {
   return x
 
 };
-exports.saveRoom = async (roomName, roomId, extras, image, roomCap, view) => {
+exports.saveRoom = async (roomName, extras, image, roomCap, view) => {
+  let id = Object.keys(await Room.find({})).length ++
   let data = {
     roomName: roomName,
-    roomId: roomId,
+    roomId: +id,
     extras: extras,
     image: image,
     roomCap: roomCap,
