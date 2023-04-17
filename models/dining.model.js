@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const DB_URL = "mongodb://localhost:27017/Booking";
 
 const restaurantSchema = mongoose.Schema({
   restId: Number,
@@ -9,17 +8,17 @@ const restaurantSchema = mongoose.Schema({
 
 const Restaurant = mongoose.model("restaurant", restaurantSchema);
 
-exports.getAllRestaurants = () => {
-  return new Promise((resolve, reject) => {
-    mongoose
-      .connect(DB_URL)
-      .then(() => {
-        return Restaurant.find({});
-      })
-      .then((restaurants) => {
-        mongoose.disconnect();
-        resolve(restaurants);
-      });
-  });
+exports.getAllRestaurants = async () => {
+  let x = await Restaurant.find({});
+  return x;
 };
 
+exports.saveRestaurant = async (restName, restId, image) => {
+  let id = Object.keys(await Restaurant.find({})).length++;
+  let data = {
+    restName: restName,
+    restId: +id,
+    image: image,
+  };
+  await Restaurant.create(data);
+};
