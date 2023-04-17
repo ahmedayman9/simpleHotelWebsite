@@ -2,11 +2,6 @@ const { text } = require("body-parser");
 const mongoose = require("mongoose");
 
 const roomReservationSchema = mongoose.Schema({
-  id: Number,
-  roomType: String,
-  noOfAdults: Number,
-  checkIn: Date,
-  checkOut: Date,
   firstName: String,
   lastName: String,
   email: String,
@@ -17,7 +12,7 @@ const roomReservationSchema = mongoose.Schema({
   phone: Number,
   fax: Number,
   specialRequests: String,
-  transactionId: Number,
+  transactionId: String,
 });
 const roomReservationModel = mongoose.model(
   "roomReservation",
@@ -37,26 +32,22 @@ exports.findRoomReservation = async (req) => {
   }
 };
 
-exports.addRoomReservation = async (req) => {
-  let id = Object.keys(await roomReservationModel.find({})).length++;
+exports.addRoomReservation = async (x, req) => {
   let db = {
-    id: ++id,
-    roomType: req.roomType,
-    noOfAdults: +req.noOfAdults,
-    checkIn: req.checkIn,
-    checkOut: req.checkOut,
-    firstName: req.firstName,
-    lastName: req.lastName,
-    email: req.email,
-    country: req.country,
-    address: req.address,
-    city: req.city,
-    postalCode: req.postalCode,
-    phone: +req.phone,
-    fax: +req.fax,
-    specialRequests: req.specialRequests,
+    firstName: req.query.firstName,
+    lastName: req.query.lastName,
+    email: req.query.email,
+    country: req.query.country,
+    address: req.query.address,
+    city: req.query.city,
+    postalCode: req.query.postalCode,
+    phone: +req.query.phone,
+    fax: +req.query.fax,
+    specialRequests: req.query.specialRequests,
+    transactionId: x,
   };
   await roomReservationModel.create(db);
+  console.log(db);
   console.log("success");
 };
 

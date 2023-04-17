@@ -16,14 +16,18 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(express.static(path.join(__dirname, "assets")));
 
-mongoose
-  .connect(process.env.DB_URL)
-  .then((c) => {
-    console.log("Database Connected: " + c.connection.host);
-  })
-  .catch((err) => {
-    console.error("Database Error " + err);
-  });
+try {
+  mongoose
+    .connect(process.env.DB_URL)
+    .then((c) => {
+      console.log("Database Connected: " + c.connection.host);
+    })
+    .catch((err) => {
+      console.error("Database Error " + err);
+    });
+} catch (error) {
+  console.error("Database Error " + error);
+}
 
 app.use("/Rooms", roomsRouter);
 app.use("/Dining", diningRouter);

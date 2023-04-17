@@ -6,25 +6,25 @@ const checkoutSchema = mongoose.Schema({
   cardType: String,
   cardNumber: Number,
   date: Date,
-  ccv: Number,
 });
 
 const checkoutModel = mongoose.model("transaction", checkoutSchema);
 var data = {};
 
 exports.checkout = async (req) => {
-  let id = Object.keys(await checkoutModel.find({})).length++;
   let data = {
-    transactionId: id,
-    cardholderName: String,
-    cardType: String,
-    cardNumber: Number,
-    date: Date,
-    ccv: Number,
+    cardholderName: req.cardholderName,
+    cardType: req.cardType,
+    cardNumber: req.cardNumber,
+    date: req.month,
   };
-  await checkoutModel.save(date);
+  await checkoutModel.create(data);
+  x = await checkoutModel.findOne({
+    cardholderName: data.cardholderName,
+    date: req.date,
+  });
   console.log("Checkout Successfully");
-  return id;
+  return x._id;
 };
 
 exports.data = data;
