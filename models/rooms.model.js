@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const DB_URL = "mongodb://localhost:27017/Booking";
 
 const roomSchema = mongoose.Schema({
   roomId: Number,
@@ -12,29 +11,24 @@ const roomSchema = mongoose.Schema({
 
 const Room = mongoose.model("room", roomSchema);
 
-exports.getAllRooms = () => {
-  return new Promise((resolve, reject) => {
-    mongoose
-      .connect(DB_URL)
-      .then(() => {
-        return Room.find({});
-      })
-      .then((rooms) => {
-        mongoose.disconnect();
-        resolve(rooms);
-      });
-  });
+exports.getAllRooms = async () => {
+  let x = await Room.find({});
+  return x;
 };
-exports.saveRoom = async (roomName, roomId, extras, image, roomCap, view) => {
+exports.saveRoom = async (roomName, extras, image, roomCap, view) => {
+  let id = Object.keys(await Room.find({})).length++;
   let data = {
     roomName: roomName,
-    roomId: roomId,
+    roomId: +id,
     extras: extras,
     image: image,
     roomCap: roomCap,
     view: view,
   };
-  await mongoose.connect(DB_URL);
   await Room.create(data);
-  await mongoose.disconnect();
+};
+
+exports.getRoomWithId = async (roomId) => {
+  let x = await Room.findOne({ roomId: +roomId });
+  return x;
 };
