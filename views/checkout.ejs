@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />	
+    <link rel="stylesheet" type="text/css" href="css/aboutstyle.css" />	
+</head>
+<body>
+    <div class="container">
+
+    <%- include("navbar") %>
+    <form action="/checkout/now" method="get">
+        <fieldset>
+        <legend>Personal Information</legend>
+        <table>
+        <tr>
+        <td><label>First Name*</label></td>
+        <td><input type="text" name="firstName"></td>
+        <td><label>Last Name*</label></td>
+        <td><input type="text" name="lastName"></td>
+        <td><label>E-mail Address*</label></td>
+        <td><input type="text" name="email"></td>
+        </tr>
+        
+        <tr>
+        <td><label>Country*</label></td>
+        <td><input type="text" name="country"></td>
+        <td><label>Address</label></td>
+        <td><input type="text" name="address"></td>
+        <td><label>City</label></td>
+        <td><input type="text" name="city"></td>
+        </tr>
+        <tr><td><label>Postal Code</label></td>
+        <td><input type="text" name="postalCode"</td>
+        <td><label>Phone</label></td>
+        <td><input type="text" name="phone"</td>
+        <td><label>Fax</label></td>
+        <td><input type="text" name="fax"</td>
+        </tr>
+        </table>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Special Requests</legend>
+        <textarea name="specialRequests" rows="5" cols="105">
+        </textarea>
+        </fieldset>
+        <br>
+    
+        <fieldset>
+            <legend>Payment Information</legend>
+        &nbsp; &nbsp;	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Card Type*</label>
+            <select name="cardType">
+            <option>Visa</option>
+            <option>Master Card</option>
+            <option>American Express</option>
+            <option>Discover</option>
+            </select>
+            <br><br>
+            <label>Cardholder Name*</label>
+            <input type="text" name="cardholderName">
+            <label>Card Number*</label>
+            <input type="text" name="cardNumber">
+            <label>Expiration Date*</label>
+            <input type="month" name="month">	
+        </fieldset>
+            <!-- <br>&nbsp; &nbsp;	&nbsp; &nbsp; &nbsp;	&nbsp;&nbsp;&nbsp; &nbsp;	&nbsp; &nbsp;	&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <input type="submit" value="Submit"/>
+        </form>
+        </div>
+</body>
+</html>

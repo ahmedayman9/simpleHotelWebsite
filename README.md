@@ -51,3 +51,9 @@ for example : /Dining/add/desha/3/image3
 <br>
 </p>
 ![image](https://user-images.githubusercontent.com/92648033/228988737-8433d3ee-5e23-4607-9b42-c5830be0fb4e.png)
+-------------------------------------------------------------------------
+[5] /Rooms/:roomId                                                        => get room details by id
+<br>
+
+![image](https://user-images.githubusercontent.com/92648033/229223870-e727fa9f-09ab-4bad-8764-578171202d67.png)
+
