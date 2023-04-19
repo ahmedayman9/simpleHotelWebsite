@@ -15,119 +15,42 @@
 		<div class="container">
 			<%- include("navbar") %>
 
-
-
-			<form method="get">
-					<header>
-					<h2>Make a Room Reservation</h2>
-					</header>
-					<fieldset>
-						<legend>Room Reservation</legend>
-						<label>Room Type
-				<select name="roomtype">
-				<option>Single</option>
-				<option>Double</option>
-				<option>Underwater Single</option>
-				<option>Underwater Double</option>
-				<option>Junior Suite</option>
-				<option>Master Suite</option>
-				<option>Underwater Junior Suite</option>
-				<option>Underwater Master Suite</option>
-				</select>
-				</label>
-				<label>Number of adults
-				<select name="noofadults">
-				<option>1</option>
-				<option>2</option>
-				</select>
-				</label>
-				<label>Check in
-				<input type="date">
-				</label>
-				<label>Check out
-				<input type="date">
-				</label>
-				<br>
-				<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input class="search" type="submit" value="Check Availability" onclick="myFunction()">
-				<br>
-				
+			<form method="get" action="/Bookings/Check">
+				<header>
+				<h2>Make a Room Reservation</h2>
+				</header>
 				<fieldset>
-				<legend>Personal Information</legend>
-				<table>
-				<tr>
-				<td><label>First Name*</label></td>
-				<td><input type="text" name="name"></td>
-				<td><label>Last Name*</label></td>
-				<td><input type="text" name="lastname"></td>
-				<td><label>E-mail Address*</label></td>
-				<td><input type="text" name="email"></td>
-				</tr>
-				
-				<tr>
-				<td><label>Country*</label></td>
-				<td><input type="text" name="country"></td>
-				<td><label>Address</label></td>
-				<td><input type="text" name="address"></td>
-				<td><label>City</label></td>
-				<td><input type="text" name="city"></td>
-				</tr>
-				<tr><td><label>Postal Code</label></td>
-				<td><input type="text" name="postalcode"</td>
-				<td><label>Phone</label></td>
-				<td><input type="text" name="phone"</td>
-				<td><label>Fax</label></td>
-				<td><input type="text" name="fax"</td>
-				</tr>
-				</table>
-				</fieldset>
-				<br>
-				<fieldset>
-					<legend>Special Requests</legend>
-				<textarea name="specialrequests" rows="5" cols="105">
-				</textarea>
-				</fieldset>
-				<br>
-			
-				<fieldset>
-					<legend>Payment Information</legend>
-				&nbsp; &nbsp;	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<label>Card Type*</label>
-					<select name="cardtype">
-					<option>Visa</option>
-					<option>Master Card</option>
-					<option>American Express</option>
-					<option>Discover</option>
-					</select>
-					<br><br>
-					<label>Cardholder Name*</label>
-					<input type="text" name="name">
-					<label>Card Number*</label>
-					<input type="text" name="cardnumber">
-					<label>Expiration Date*</label>
-					<input type="month" name="month">	
-				</fieldset>
-				</form>
-				<form action="Success" method="post">
-					<br>&nbsp; &nbsp;	&nbsp; &nbsp; &nbsp;	&nbsp;&nbsp;&nbsp; &nbsp;	&nbsp; &nbsp;	&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="submit" 
-				name="Submit" id="frm1_submit" />
-				</form>
-				
-				
-				
-
-<script>
-function myFunction() {
-    alert("Room is available! You can proceed with the booking");
-}
-</script>
-				
-				
-				
-			   
-
-
+					<legend>Room Reservation</legend>
+					<label>Room Type
+			<select name="roomType">
+			<option>Single</option>
+			<option>Double</option>
+			<option>Underwater Single</option>
+			<option>Underwater Double</option>
+			<option>Junior Suite</option>
+			<option>Master Suite</option>
+			<option>Underwater Junior Suite</option>
+			<option>Underwater Master Suite</option>
+			</select>
+			</label>
+			<label>Number of adults
+			<select name="noOfAdults">
+			<option>1</option>
+			<option>2</option>
+			</select>
+			</label>
+			<label>Check in
+			<input type="date" name="checkIn">
+			</label>
+			<label>Check out
+			<input type="date" name="checkOut">
+			</label>
+			<br>
+			<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="search" type="submit" value="Check Availability">
+			<br>
+		</form>
+	
 </div>
 </body>
 </html>
